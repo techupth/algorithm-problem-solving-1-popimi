@@ -1,17 +1,18 @@
 function twoSum(numbers, target) {
   const result = [];
-  //   for(let num of numbers){
-  //       for(let n of numbers){
-  //           if(num + n === target) {
-  //               result.push(numbers.indexOf(num))
-  //           }
-  //       }
-  //   }
-  numbers.forEach((num) =>
-    numbers.forEach((n) =>
-      num + n === target ? result.push(numbers.indexOf(num)) : null
-    )
-  );
+  for (let i = 0; i <= numbers.length - 1; i++) {
+    for (let j = i + 1; j <= numbers.length - 1; j++) {
+      if (numbers[i] + numbers[j] === target) {
+        result.push(i, j);
+        return result;
+      }
+    }
+  }
+  //   numbers.forEach((num) =>
+  //     numbers.forEach(
+  //       (n) => num + n === target && result.push(numbers.indexOf(num))
+  //     )
+  //   );
   return result;
 }
 
